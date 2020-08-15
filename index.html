@@ -214,30 +214,31 @@
           They are acting like a real hamburger,
           not that McDonalds stuff.
           -->
-          <span></span>
-          <span></span>
-          <span></span>
-          
+          <div class="burgerSpan">
+          <span class="menuSpan"></span>
+          <span class="menuSpan"></span>
+          <span class="menuSpan"></span>
+        </div>
           <!--
           Too bad the menu has to be inside of the button
           but hey, it's pure CSS magic.
           -->
           <ul id="menu" class="list">
             <li class="list_item"><a class="list_item-link home" href="#">
-                <svg class="list_item_navigation-icon home" >
-                <use href="#home"></use></svg>
+                <svg class="list_item_navigation-icon home homeSvg">
+                <use href="#home"></use></svg><span class="overLay"></span>
                 HOME</a></li>
             <li class="list_item"><a class="list_item-link" href="#">
                 <svg class="list_item_navigation-icon">
-                <use href="#about"></use></svg>
+                <use href="#about"></use></svg><span class="overLay"></span>
                 ABOUT</a></li>
             <li class="list_item"><a class="list_item-link" href="#">
                 <svg class="list_item_navigation-icon">
-                <use href="#portfolio"></use></svg>
+                <use href="#portfolio"></use></svg><span class="overLay"></span>
                 PORTFOLIO</a></li>
             <li class="list_item"><a class="list_item-link" href="#">
                 <svg class="list_item_navigation-icon">
-                <use href="#contact"></use></svg>
+                <use href="#contact"></use></svg><span class="overLay"></span>
                 CONTACT</a></li>
           </ul>
         </div>
@@ -245,10 +246,13 @@
     </header>
     <main>
         <div class="content_wrapper">
-          <div class="taxt_wrapper">
+            <div class="image_wrapper">
+                <img src="./images/me.jpg" alt="portfolio_img" class="image_fluid">
+                </div>
+          <div class="text_wrapper">
             <h2 class="hello">HI THERE !</h2>
-            <h1 class="iAm">I'M <span class="name">BOHDAN DZIUBLIUK</span></h1>
-            <p class="about_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero pariatur magni doloribus voluptate corporis fugiat cum accusamus quaerat culpa vitae dolore hic deleniti placeat minima impedit quam natus enim aliquam est suscipit, alias assumenda, voluptatum corrupti. Ducimus!</p>
+            <div class="introduce"><h2><span class="iAm">I'M</span> <span class="name">BOHDAN <br> DZIUBLIUK</span></h2></div>
+            <p class="about_info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero pariatur magni doloribus voluptate corporis fugiat cum accusamus quaerat culpa vitae dols;jkfsdljbalj a;kfsdkfas;fksa;</p>
             <button class="btn">MORE ABOUT ME</button>
         </div>
     </div>
