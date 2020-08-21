@@ -7,7 +7,7 @@ body {
 }
 #menuToggle {
   display: block;
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   z-index: 1;
@@ -41,16 +41,11 @@ body {
   width: 33px;
   height: 2px;
   margin: 7px;
-
   position: relative;
-
   background: #cdcdcd;
   border-radius: 3px;
-
   z-index: 1;
-
   transform-origin: 4px 0px;
-
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
     background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
@@ -204,6 +199,8 @@ display: none;
 
 }
 @media (min-width: 768px) {
+  .content_wrapper {
+background-color: transparent;  }
   .image_wrapper {
     display: block;
     margin: 0 auto;
@@ -212,7 +209,6 @@ display: none;
     .image_fluid {
       display: block;
       width: 270px;
-      height: 270px;
       display: flex;
       margin: 0 auto;
       align-items: center;
@@ -235,15 +231,24 @@ display: none;
     margin: 0 auto;   
     margin-top: 25px; 
 }
+.overLay {
+  direction: ;
+}
 }
 @media (min-width: 968px) {
-  .burgerSpan {
+  #menuToggle .menuSpan{
+    display: none;
+  }
+  #menuToggle  {
+    background-color: #111;
+  }
+  input {
     display: none;
   }
   #menu {   
      position: absolute;
-    top:32vh;
-    left: -15vw;
+    top:24vh;
+    left: -13vw;
     background-color: #111;
 
   }
