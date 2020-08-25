@@ -56,7 +56,7 @@
 <g>
 </g>
 </symbol>
-<symbol viewbox="0 0 512 512" id="portfolio">
+<symbol viewbox="0 0 412 412" id="portfolio">
     <g>
         <path d="M336.055,173.98H194.389l-10.324-70.317c-2.397-16.325-17.858-29.682-34.358-29.682H25.957
             c-16.5,0-28.039,13.357-25.642,29.682L39.707,371.98h367.5L372.16,203.352C368.802,187.197,352.555,173.98,336.055,173.98z"/>
@@ -197,56 +197,34 @@
 
 </defs>
 </svg>
-
-    <div class="page_wrapper">
-    <header>
-    <nav role="navigation">
-        <div id="menuToggle">
-          <!--
-          A fake / hidden checkbox is used as click reciever,
-          so you can use the :checked selector on it.
-          -->
-          <input type="checkbox" />
-          
-          <!--
-          Some spans to act as a hamburger.
-          
-          They are acting like a real hamburger,
-          not that McDonalds stuff.
-          -->
-          <!-- <div class="burgerSpan"> -->
-          <span class="menuSpan"></span>
-          <span class="menuSpan"></span>
-          <span class="menuSpan"></span>
-        <!-- </div> -->
-          <!--
-          Too bad the menu has to be inside of the button
-          but hey, it's pure CSS magic.
-          -->
-          <ul id="menu" class="list">
-            <li class="list_item"><a class="list_item-link home" href="#">
-                <svg class="list_item_navigation-icon  homeSvg">
-                <use href="#home"></use></svg><span class="overLay"></span>
-                HOME</a></li>
-            <li class="list_item"><a class="list_item-link" href="#">
-                <svg class="list_item_navigation-icon">
-                <use href="#about"></use></svg><span class="overLay"></span>
-                ABOUT</a></li>
-            <li class="list_item"><a class="list_item-link" href="#">
-                <svg class="list_item_navigation-icon">
-                <use href="#portfolio"></use></svg><span class="overLay"></span>
-                PORTFOLIO</a></li>
-            <li class="list_item"><a class="list_item-link" href="./pages/contact.html">
-                <svg class="list_item_navigation-icon">
-                <use href="#contact"></use></svg><span class="overLay"></span>
-                CONTACT</a></li>
-          </ul>
+    <div class="menu_wrapper">
+        <button class="burger burger_line">
+            <span></span>
+        </button>
+        <div id="menu">
+            <ul  class="list">
+                <li class="list_item"><a class="list_item-link home" href="#">
+                    <svg class="list_item_navigation-icon  homeSvg">
+                    <use href="#home"></use></svg><span class="overLay"></span>
+                    HOME</a></li>
+                <li class="list_item"><a class="list_item-link" href="./pages/about.html">
+                    <svg class="list_item_navigation-icon">
+                    <use href="#about"></use></svg><span class="overLay"></span>
+                    ABOUT</a></li>
+                <li class="list_item"><a class="list_item-link" href="#">
+                    <svg class="list_item_navigation-icon">
+                    <use href="#portfolio"></use></svg><span class="overLay"></span>
+                    PORTFOLIO</a></li>
+                <li class="list_item"><a class="list_item-link" href="./pages/contact.html">
+                    <svg class="list_item_navigation-icon">
+                    <use href="#contact"></use></svg><span class="overLay"></span>
+                    CONTACT</a></li>
+              </ul>
         </div>
-      </nav>
-    </header>
+    </div>
     <main>
         <div class="content_wrapper">
-            <div class="image_wrapper">
+            <div class="image_wrapper" id="img">
                 <img src="./images/me.jpg" alt="portfolio_img" class="image_fluid">
                 </div>
           <div class="text_wrapper">
@@ -257,7 +235,7 @@
         </div>
     </div>
     </main>
-</div>
+
     <script src="./js/app.js"></script>
 </body>
 </html>

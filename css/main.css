@@ -1,147 +1,139 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 body {
   background-color: #111;
 }
-#menuToggle {
+.menu_wrapper {
+  position: relative;
+  width: 100vw;
+  background: grey;
+}
+.burger {
+  margin: 25px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 54px;
+  height: 44px;
+  font-size: 0;
+  box-shadow: none;
+  cursor: pointer;
+  z-index: 10;
+  background-color: #272727;
+  border-radius: 5px;
+  border: none;
+}
+.burger:focus {
+  outline: none;
+}
+.burger span {
+  width: 44px;
   display: block;
   position: absolute;
   top: 20px;
-  right: 20px;
-  z-index: 1;
-  padding: 6px;
-  border-radius: 10px;
-  background-color: #252525;
-  -webkit-user-select: none;
-  user-select: none;
-}
-#menuToggle a:hover {
-  color: #8a2be2;
-  fill: #8a2be2;
-}
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  cursor: pointer;
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-  -webkit-touch-callout: none;
-}
-/*
-  * Just a quick hamburger
-  */
-#menuToggle .menuSpan {
-  display: block;
-  width: 33px;
+  left: 5px;
+  right: 5px;
   height: 2px;
-  margin: 7px;
-  position: relative;
-  background: #cdcdcd;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  background: #fff;
 }
-
-#menuToggle .menuSpan:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle .menuSpan:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-/* 
-  * Transform all the slices of hamburger
-  * into a crossmark.
-  */
-#menuToggle input:checked ~ .menuSpan {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  color: white;
-}
-
-/*
-  * But let's hide the middle one.
-  */
-#menuToggle input:checked ~ .menuSpan:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
-  * Ohyeah and the last one should go the other direction
-  */
-#menuToggle input:checked ~ .menuSpan:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
-  * Make this absolute positioned
-  * at the top left of the screen
-  */
-#menu {
-  position: fixed;
-  top: 0;
+.burger span::before, .burger span::after {
+  position: absolute;
+  display: block;
   left: 0;
-  padding: 10%;
-  padding-top: 15%;
-  height: 100%;
+  width:44px;
+  height:2px;
+  background: #fff;
+  content: "";
+}
+.burger span::before {
+  top: 10px;
+}
+.burger span::after { 
+  bottom: 10px;
+}
+.burger_line span{
+transition: backgraound 0s 0.3s;
+}
+.burger span::before, .burger span::after { 
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s 0s;
+}
+.burger_line span::before{ 
+  transition-property: top, transform;
+} 
+.burger_line span::after { 
+  transition-property: bottom, transform;
+}
+
+.burger_line.is-active span {
+  background: none;
+}
+.burger_line.is-active span::before  {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.burger_line.is-active span::after  {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+.burger_line.is-active span::before,.burger_line.is-active span::after {
+  transition-delay: 0s, 0.3s ;
+}
+#menu {
   width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  background: #252525;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
+  margin-left: -100%;
+  background: #272727;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: all ease 1s;
+  z-index: 9;
 
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
 }
-
-/*
-  * And let's slide it in from the left
-  */
-#menuToggle input:checked ~ ul {
-  transform: none;
+.list {
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 70px;
+  list-style: none;
 }
 .list_item {
-  font-size: 18px;
+  padding: 10px;
+  font-size: 22px;
   font-family: "Poppins", sans-serif;
   border-bottom: 0.5px solid grey;
-  width: 80%;
+  width: 100%;
+  margin: 10px;
 }
 .list_item-link {
   color: white;
   fill: white;
   text-decoration: none;
   transition: color 0.3s ease;
-  font-weight: bold;
-  width: 100%;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+
 }
 .list_item_navigation-icon {
   height: 18px;
   width: 18px;
-  padding-right: 15px;
-}
+margin-right: 15px;}
 .home {
   fill: #8a2be2;
   color: #8a2be2;
 }
-/* end of the header */
 
+.menu_wrapper-active {
+margin-left: 300px;
+}
+#menu.nav-active {
+margin-left: 0;  
+}
 /* main section starts */
 main {
   display: flex;
@@ -197,13 +189,17 @@ display: none;
   border: none;
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
-
 }
 @media (min-width: 768px) {
+  .content_wrapper {
+background-color: transparent;  }
   .image_wrapper {
     display: block;
     margin: 0 auto;
     box-sizing: border-box;
+    }
+    .image_wrapper--active {
+      display: none;
     }
     .image_fluid {
       display: block;
@@ -214,7 +210,6 @@ display: none;
       text-align: center;
       border-radius: 50%;
       border: 4px solid #252525;
-
     }
     .hello {
       opacity: 0;
@@ -231,155 +226,149 @@ display: none;
     margin-top: 25px; 
 }
 }
-@media (min-width: 968px) {
-  
-  #menuToggle .menuSpan{
-  opacity: 0;  }
-  #menuToggle  {
-    background-color: #111;
-  }
-  input {
+@media(min-width: 960px) {
+ 
+  .burger {
     display: none;
   }
-  #menu {   
-    position: absolute;
-    top:  23.1vh;
-    left: -120px; 
-    background-color: #111;
+#menu {
+  margin:0;
+  padding: 0;
+  width: 12%;
+  height: 30%;
+  position: fixed;
+  top:30%;
+  left:82%;
+  background: transparent;
+}
+.list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+.list_item {
+  border-radius: 25px;
+  border: none;
+}
+.list_item-link {
+  padding-left: 7px;
+  display: flex;
+  font-size: 20px;
+  font-weight: normal;
+  align-items: center;
+  border-radius: 25px;  
+  margin: 0;
+  position: relative;
+  width: 160px;
+  height: 50px;
+ background-color: #8a2be2;
+}
+.home {
+color: white;
+}
+.list_item_navigation-icon {
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  background-color: #252525;
+  border-radius: 25px;
+  transition: 2s;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  fill: white;
+  margin: 0;
+}
+.homeSvg {
+  fill: white;
+  border-radius: 25px;
+  margin: 0;
+  background-color: #8a2be2;;
+}
 
-  }
-  .list_item {
-    border-radius: 25px;
-    border: none;
-    padding: 0;
-    margin: 0;
-  }
-  .list_item-link {
-    padding-left: 7px;
-    display: flex;
-    align-items: center;
-    border-radius: 25px;  
-    margin: 0;
-    position: relative;
-    width: 180px;
-    height: 50px;
-   background-color: #8a2be2;
-  }
-  .home {
-  color: white;
-  }
-  .list_item_navigation-icon {
-    width: 30px;
-    height: 30px;
-    padding: 10px;
-    background-color: #252525;
-    border-radius: 25px;
-    transition: 2s;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    fill: white;
-    overflow: hidden;
-    display: block;
-  }
-  .homeSvg {
-    fill: white;
-    border-radius: 25px;
-    margin: 0;
-    background-color: #8a2be2;;
-  }
-  
-  .list_item-link:hover .list_item_navigation-icon{
-    fill: white;
-    background-color: #8a2be2;
-    transition: 2s;
-  } 
-  #menuToggle a:hover {
-    color: white;
-  }
-  
-  .overLay{
-          top:0;
-          position: absolute;
-          border-radius: 25px;
-          width: 180px;
-          height: 50px;
-          background: #111;
-          background-position: right top;
-          -webkit-transition: width .7s;
-          position:absolute;
-          top:0; left:0;
-          z-index: 0;
-  }
-  .list_item-link:hover .overLay{
-   width: 0px;
-  } 
-  .test:hover .b{
-    width: 0px;
-    z-index: 0;
-  }
-  .test:hover .list_item_navigation-icon{
-background-color: #8a2be2;
-  }
-       
-         
-  main {
-    height: 98vh;
-    background-image: -webkit-linear-gradient(195deg, #111 78%, #8a2be2 22%);
-    max-width: 100vw;
-  }
-  .content_wrapper {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    margin: 0;
-    width: 100vw;
-    max-width: 100vw;
-  }
-  .image_wrapper {
-    width: 50vw;
-  }
-  .image_fluid {
- border-radius: 0;
- object-fit: cover;
-  height: 90vh;
-  width: 30vw;
-  margin-left: 10%;
-  border-radius: 15px;
-  } 
-  .text_wrapper {
-    padding-left: 0;
-    padding-right: 0;
-    width: 60vw;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    vertical-align: middle;
-    justify-content: center;
-  }
+.list_item-link:hover .list_item_navigation-icon{
+  fill: white;
+  background-color: #8a2be2;
+  transition: 2s;
+} 
+
+
+.overLay{
+        top:0;
+        position: absolute;
+        border-radius: 25px;
+        width: 180px;
+        height: 50px;
+        background: #111;
+        background-position: right top;
+        -webkit-transition: width .7s;
+        position:absolute;
+        top:0; left:0;
+        z-index: 0;
+}
+.list_item-link:hover .overLay{
+ width: 0px;
+} 
+
+main {
+  height: 98vh;
+  background-image: -webkit-linear-gradient(195deg, #111 78%, #8a2be2 22%);
+  max-width: 100vw;
+}
+.content_wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  max-width: 100vw;
+}
+.image_wrapper {
+  width: 50vw;
+}
+.image_fluid {
+border-radius: 0;
+object-fit: cover;
+height: 90vh;
+width: 30vw;
+margin-left: 10%;
+border-radius: 15px;
+} 
+.text_wrapper {
+  padding-left: 0;
+  padding-right: 0;
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  vertical-align: middle;
+  justify-content: center;
+}
 .hello {
-  opacity: 1;
-  font-size: 22px;
-  font-weight: 400;
+opacity: 1;
+font-size: 22px;
+font-weight: 400;
 }
 .name {
-  font-size: 45px;
-  line-height: 45px;
-  font-weight: 700;
+font-size: 45px;
+line-height: 45px;
+font-weight: 700;
 }
 .iAm {
-  font-size: 45px;
-  font-weight: 700;
+font-size: 45px;
+font-weight: 700;
 }
 .about_info {
-  text-align: left;
-  max-width: 62% ;
-  font-size: 16px;
-  line-height: 32px;
+text-align: left;
+max-width: 62% ;
+font-size: 16px;
+line-height: 32px;
 }
 .btn {
-  margin: 0;
-  margin-top: 20px;
+margin: 0;
+margin-top: 20px;
 }
 }
+

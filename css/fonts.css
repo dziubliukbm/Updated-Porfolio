@@ -67,9 +67,9 @@
      font-family: 'Poppins';
      font-style: bold;
      font-weight: 500;
-     src: url('../fonts/poppins-bold-webfont.woff2'); /* IE9 Compat Modes */
+     src: url('../fonts/poppins-v12-latin-900.woff2'); /* IE9 Compat Modes */
      src: local('Poppins Black Italic'), local('Poppins-BlackItalic'),
            /* IE6-IE8 */
-          url('../fonts/poppins-bold-webfont.woff2') format('woff2') /* Super Modern Browsers */
+          url('../fonts/poppins-v12-latin-900.woff2') format('woff2') /* Super Modern Browsers */
    }
    
