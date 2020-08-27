@@ -1,4 +1,3 @@
-
 document.querySelector('.burger').addEventListener('click', function (e){
     e.preventDefault();
     if (this.classList.contains('is-active')){
