@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+html {
+  overflow-y: scroll;
+}
 body {
   background-color: #111;
 
@@ -28,7 +31,7 @@ font-family: "Poppins", sans-serif;
 font-weight: bold;
 }
 .hightLight {
-  z-index: 100;
+  z-index: 8;
   opacity: 1;
   padding-left: 4px;
   color: rgba(138, 43, 226, 1);

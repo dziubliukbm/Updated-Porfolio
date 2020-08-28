@@ -1,9 +1,15 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
+/* html {
+  overflow-y: scroll;
+  overflow-x: scroll;
+} */
+
 body {
   background-color: #111;
 
@@ -206,7 +212,6 @@ margin-left: 0;
   .personal_info--list--item {
   padding-top: 10px;  
   padding-bottom: 10px;
-
   }
   .list_item--title {
     color :#dad8d8;
@@ -422,6 +427,12 @@ margin-bottom: 40px;
     .image_wrapper {
       display: none;
     }
+    .info_title {
+      font-size: 1.4rem;
+    }
+    .list_item--title { 
+      font-size: 1rem;
+    }
     .download {
       width: 30%;
     }
@@ -431,6 +442,9 @@ margin-bottom: 40px;
     
   }
 @media (min-width: 968px) {
+  html {
+    overflow-y: scroll;
+  }
   .page_wrapper {
     width: 70%;
     margin: 0 auto;
@@ -531,6 +545,9 @@ color: white;
   background-color: #8a2be2;
   border: none;
 }
+.list-item--title {
+font-size: 1rem;
+} 
 .contact-icons:hover {
   fill: #8a2be2;
 }  
