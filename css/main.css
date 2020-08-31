@@ -193,6 +193,14 @@ display: none;
   border: none;
   border-radius: 20px;
   font-family: "Poppins", sans-serif;
+  border: 2px solid transparent;
+  transition: ease 0.5s;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: transparent;
+  border: 2px solid #8a2be2;
+  box-sizing: border-box;
 }
 @media (min-width: 768px) {
   .content_wrapper {

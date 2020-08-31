@@ -191,7 +191,6 @@ margin-left: 0;
  
   .image_fluid {
     display: block;
-    width: 230px;
     height: 230px;
     display: flex;
     margin: 0 auto;
@@ -221,6 +220,11 @@ margin-left: 0;
     color: white;;
     font-weight: 600;
   }
+  .linkedIn-link, .git_link{
+    /* text-decoration: none; */
+    color: white;;
+
+  }
   .download {
     width: 50%;
     display: block;
@@ -235,6 +239,14 @@ margin-left: 0;
     border: none;
     border-radius: 20px;
     font-family: "Poppins", sans-serif;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: ease 0.5s;
+  }
+  .download:hover {
+    background-color: transparent;
+    border: 2px solid #8a2be2;
+    box-sizing: border-box;
   }
   .btn_wrapper {
     margin-bottom: 100px;
