@@ -197,6 +197,9 @@ display: none;
   transition: ease 0.5s;
   cursor: pointer;
 }
+.about_link {
+  text-decoration: none;
+}
 .btn:hover {
   background-color: transparent;
   border: 2px solid #8a2be2;

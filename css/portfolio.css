@@ -211,7 +211,9 @@ background-position: 0% 50% ;
 }
 #giphyApi{
   background-image:url("../images/gigy-API.jpg");
- 
+}
+#sharkNo{
+  background-image:url("../images/SharkNo.jpg");
 }
 .project__container--text {
   font-family: "Sans" serif;
